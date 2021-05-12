@@ -1,8 +1,11 @@
+from algorithms.heap.merge_sorted_k_lists import ListNode
 from algorithms.heap import (
     BinaryHeap,
     get_skyline,
     max_sliding_window,
-    k_closest
+    k_closest,
+    merge_k_lists,
+    merge_k_lists_with_priority
 )
 
 import unittest
@@ -61,6 +64,41 @@ class TestSuite(unittest.TestCase):
         self.assertEqual([(-2, -2), (1, 1), (1, 0), (-1, 0)], k_closest(points, 4))
         self.assertEqual([(10, 2), (2, 8), (5, 2), (-2, -2), (2, 3),
                           (1, 0), (-1, 0), (1, 1)], k_closest(points, 8))
+
+class TestMergeSortedKList(unittest.TestCase):
+    def setup(self):
+        # created first sorted list
+        # 0, 2, 4, 6, 8
+        first = ListNode(0)
+        temp = first
+        for i in range(2,10,2):
+            temp.next = ListNode(i)
+            temp = temp.next
+        # created second sorted list
+        # 1, 3, 5, 7, 9
+        second = ListNode(1)
+        temp = second
+        for i in range(3,11,2):
+            temp.next = ListNode(i)
+            temp = temp.next        
+        list = [first, second]
+        return list
+
+    def test_merge_sorted_k_list(self):
+        ls = self.setup()
+        answer = merge_k_lists(ls)
+        # expect 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+        for i in range(10):
+            self.assertEqual(answer.val, i)
+            if answer.next: answer = answer.next
+
+    def test_merge_sorted_k_list_with_priority(self):
+        ls = self.setup()
+        answer = merge_k_lists_with_priority(ls)
+        # expect 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+        for i in range(10):
+            self.assertEqual(answer.val, i)
+            if answer.next: answer = answer.next   
 
 
 if __name__ == "__main__":

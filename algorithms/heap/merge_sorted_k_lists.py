@@ -30,7 +30,7 @@ def merge_k_lists(lists):
     return dummy.next
 
 
-def merge_k_lists(lists):
+def merge_k_lists_with_priority(lists):
     dummy = ListNode(None)
     curr = dummy
     q = PriorityQueue()
