@@ -23,6 +23,7 @@ class TestSuite(unittest.TestCase):
 
     def test_is_sorted(self):
         # Test case: bottom [6, 3, 5, 1, 2, 4] top
+        self.assertTrue(is_sorted([]))
         self.assertFalse(is_sorted([6, 3, 5, 1, 2, 4]))
         self.assertTrue(is_sorted([1, 2, 3, 4, 5, 6]))
         self.assertFalse(is_sorted([3, 4, 7, 8, 5, 6]))
@@ -99,6 +100,10 @@ class TestStack(unittest.TestCase):
         self.assertEqual(1, stack.pop())
 
         self.assertTrue(stack.is_empty())
+
+        # test expand()
+        stack.expand()
+        self.assertEqual(0, len(stack))
 
     def test_LinkedListStack(self):
         stack = LinkedListStack()
