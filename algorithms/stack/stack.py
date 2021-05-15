@@ -83,7 +83,7 @@ class ArrayStack(AbstractStack):
             raise IndexError("stack is empty")
         return self._array[self._top]
 
-    def expand(self):
+    def _expand(self):
         """
          expands size of the array.
          Time Complexity: O(n)
