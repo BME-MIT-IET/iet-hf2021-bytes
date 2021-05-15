@@ -52,24 +52,24 @@ def partition(head, x):
 
 
 def test():
-    a = Node("3")
-    b = Node("5")
-    c = Node("8")
-    d = Node("5")
-    e = Node("10")
-    f = Node("2")
-    g = Node("1")
+    node_1 = Node("3")
+    node_2 = Node("5")
+    node_3 = Node("8")
+    node_4 = Node("5")
+    node_5 = Node("10")
+    node_6 = Node("2")
+    node_7 = Node("1")
 
-    a.next = b
-    b.next = c
-    c.next = d
-    d.next = e
-    e.next = f
-    f.next = g
+    node_1.next = node_2
+    node_2.next = node_3
+    node_3.next = node_4
+    node_4.next = node_5
+    node_5.next = node_6
+    node_6.next = node_7
 
-    print_linked_list(a)
-    partition(a, 5)
-    print_linked_list(a)
+    print_linked_list(node_1)
+    partition(node_1, 5)
+    print_linked_list(node_1)
 
 
 if __name__ == '__main__':

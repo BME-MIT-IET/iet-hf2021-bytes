@@ -32,7 +32,8 @@ def rotate_right(head, k):
     current.next = head
     k = k % length
     # rotate until length-k
-    for i in range(length-k):
+    i = 0
+    while i < length-k:
         current = current.next
     head = current.next
     current.next = None
