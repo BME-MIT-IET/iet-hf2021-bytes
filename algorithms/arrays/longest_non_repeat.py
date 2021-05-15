@@ -89,3 +89,4 @@ def get_longest_non_repeat_v2(string):
                 sub_string = string[start: index + 1]
         used_char[char] = index
     return max_len, sub_string
+    

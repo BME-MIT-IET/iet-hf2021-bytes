@@ -14,7 +14,7 @@ def remove_range(head, start, end):
     # Case: remove node at head
     if start == 0:
         for i in range(0, end+1):
-            if head != None:
+            if head is not None:
                 head = head.next
     else:
         current = head
@@ -23,6 +23,6 @@ def remove_range(head, start, end):
             current = current.next
         # Remove data until the end
         for i in range(0, end-start + 1):
-            if current != None and current.next != None:
+            if current is not None and current.next is not None:
                 current.next = current.next.next
     return head
