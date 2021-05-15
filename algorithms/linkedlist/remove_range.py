@@ -17,6 +17,7 @@ def remove_range(head, start, end):
         while i < end+1:
             if head is not None:
                 head = head.next
+            i = i -1
     else:
         current = head
         # Move pointer to start position
