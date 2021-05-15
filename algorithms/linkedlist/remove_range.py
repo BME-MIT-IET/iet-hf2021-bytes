@@ -15,7 +15,7 @@ def remove_range(head, start, end):
     if start == 0:
         i = 0
         while i < end+1:
-            if head is not None:
+            if head != None:
                 head = head.next
             i = i -1
     else:
@@ -25,6 +25,6 @@ def remove_range(head, start, end):
             current = current.next
         # Remove data until the end
         for i in range(0, end-start + 1):
-            if current is not None and current.next is not None:
+            if current != None and current.next != None:
                 current.next = current.next.next
     return head
