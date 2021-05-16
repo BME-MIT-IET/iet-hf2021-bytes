@@ -17,7 +17,10 @@ from algorithms.sort import (
     radix_sort,
     gnome_sort,
     cocktail_shaker_sort,
-    top_sort, top_sort_recursive
+    top_sort, top_sort_recursive,
+    stoogesort,
+    sort_colors,
+    wiggle_sort
 )
 
 import unittest
@@ -93,8 +96,23 @@ class TestSuite(unittest.TestCase):
     def test_cocktail_shaker_sort(self):
         self.assertTrue(is_sorted(cocktail_shaker_sort([1, 3, 2, 5, 65, 23, 57, 1232])))
     
-    def test_insertion_sort(self):
-        self.assertTrue(is_sorted(insertion_sort([1, 3, 2, 5, 65, 23, 57, 1232], True)))
+    def test_stooge_sort(self):
+        ls = [1, 3, 2, 5, 65, 23, 57, 1232]
+        stoogesort(ls, 0, 7)
+        self.assertTrue(is_sorted(ls))
+        ls = [1]
+        stoogesort(ls, 0, 0)
+        self.assertTrue(is_sorted(ls))
+  
+    def test_sort_colors(self):
+        ls = [1, 3, 2, 5, 65, 23, 57, 1232]
+        sort_colors.sort_colors(ls)
+        self.assertTrue(is_sorted(ls))
+    
+    def test_wiggle_sort(self):
+        ls = [1, 3, 2, 5, 65, 23, 57, 1232]
+        wiggle_sort.wiggle_sort(ls)
+        self.assertTrue(ls, [1, 3, 2, 65, 5, 57, 23, 1232])
 
 
 class TestTopSort(unittest.TestCase):
