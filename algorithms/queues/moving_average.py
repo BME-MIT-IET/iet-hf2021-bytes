@@ -2,7 +2,7 @@ from __future__ import division
 from collections import deque
 
 
-class MovingAverage(object):
+class MovingAverage():
     def __init__(self, size):
         """
         Initialize your data structure here.
