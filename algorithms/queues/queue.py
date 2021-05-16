@@ -96,6 +96,7 @@ class QueueNode:
         self.value = value
         self.next = None
 
+
 class LinkedListQueue(AbstractQueue):
 
     def __init__(self):
