@@ -49,6 +49,13 @@ class TestWordLadder(unittest.TestCase):
 
         # not possible to reach !
         self.assertEqual(-1, ladder_length('rahul', 'coder', ['blahh', 'blhah']))
+    
+    def test_shortest_distance(self):
+        grid = [[1, 0, 1, 0], [1, 0, 0, 0], [1, 0, 0, 0], [0, 1, 0, 0]]
+        self.assertEqual(9, shortest_distance_from_all_buildings.shortest_distance(grid))
+
+        grid = [[1, 0, 1, 0], [1, 0, 1, 0], [1, 0, 1, 1], [0, 1, 0, 0]]
+        self.assertEqual(-1, shortest_distance_from_all_buildings.shortest_distance(grid))
 
 
 if __name__ == "__main__":
