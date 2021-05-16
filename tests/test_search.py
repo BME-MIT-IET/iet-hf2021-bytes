@@ -143,6 +143,24 @@ class TestSuite(unittest.TestCase):
         self.assertEqual(-1, interpolation_search(array, -10))
         self.assertEqual(10, interpolation_search(array, 20))
 
+        array2 = [10, 12, 13, 16, 18, 19, 20, 21, 22, 23, 24, 33, 35, 42, 47]
+        self.assertEqual(0, interpolation_search(array2, 10))
+        self.assertEqual(1, interpolation_search(array2, 12))
+        self.assertEqual(2, interpolation_search(array2, 13))
+        self.assertEqual(3, interpolation_search(array2, 16))
+        self.assertEqual(4, interpolation_search(array2, 18))
+        self.assertEqual(5, interpolation_search(array2, 19))
+        self.assertEqual(6, interpolation_search(array2, 20))
+        self.assertEqual(7, interpolation_search(array2, 21))
+        self.assertEqual(8, interpolation_search(array2, 22))
+        self.assertEqual(9, interpolation_search(array2, 23))
+        self.assertEqual(10, interpolation_search(array2, 24))
+        self.assertEqual(11, interpolation_search(array2, 33))
+        self.assertEqual(12, interpolation_search(array2, 35))
+        self.assertEqual(13, interpolation_search(array2, 42))
+        self.assertEqual(14, interpolation_search(array2, 47))
+        self.assertEqual(-1, interpolation_search(array2, -5))
+
 
 if __name__ == '__main__':
 
