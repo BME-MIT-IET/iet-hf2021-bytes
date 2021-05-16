@@ -68,7 +68,6 @@ def test():
     print_linked_list(a)
     partition(a, 5)
     print_linked_list(a)
-    print_linked_list(node_1)
 
 
 if __name__ == '__main__':
