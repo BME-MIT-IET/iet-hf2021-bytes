@@ -32,7 +32,7 @@ and **algorithms** package to run the tests and see coverage
 
 ## Running tests and coverage ##
 
-Running all the unittest and pytests. See the coverage report and save it as an html files in */htmlcov* directory
+Running all the unittest and pytests. See the coverage report and save it as an html files in */htmlcov* directory.
 
     - name: Run Unit Tests and generate coverage report
         run: |
