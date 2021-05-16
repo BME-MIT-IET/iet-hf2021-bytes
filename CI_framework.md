@@ -45,3 +45,9 @@ Running all the unittest and pytests. See the coverage report and save it as an 
         with:
             name: code-coverage-report
             path: htmlcov
+
+## Incident with github actions ##
+
+There's currently an issue with github actions, which makes all the workflows queued. **Date: 5/16/21**
+
+You can see the related picture with name *github_action_issue.png*
