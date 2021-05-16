@@ -4,7 +4,9 @@ from algorithms.queues import (
     ArrayQueue, LinkedListQueue,
     max_sliding_window,
     reconstruct_queue,
-    PriorityQueue
+    PriorityQueue,
+    moving_average,
+    zigzagiterator
 )
 
 
@@ -87,6 +89,13 @@ class TestSuite(unittest.TestCase):
     def test_reconstruct_queue(self):
         self.assertEqual([[5, 0], [7, 0], [5, 2], [6, 1], [4, 4], [7, 1]],
                          reconstruct_queue([[7, 0], [4, 4], [7, 1], [5, 0], [6, 1], [5, 2]]))
+    
+    def test_moving_average(self):
+        queue = moving_average.MovingAverage(5)
+        self.assertEqual(queue.next(2), 2)
+        self.assertEqual(queue.next(5), (5 + 2) / 2)
+        self.assertEqual(queue.next(8), (2 + 5 + 8) / 3)
+        self.assertEqual(queue.next(10), (2 + 5 + 8 + 10) / 4)
 
 
 class TestPriorityQueue(unittest.TestCase):
