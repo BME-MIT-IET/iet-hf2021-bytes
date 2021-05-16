@@ -36,8 +36,8 @@ def reverse_list_recursive(head):
     """
     if head is None or head.next is None:
         return head
-    temp = head.next
+    p = head.next
     head.next = None
-    revrest = reverse_list_recursive(temp)
-    temp.next = head
+    revrest = reverse_list_recursive(p)
+    p.next = head
     return revrest

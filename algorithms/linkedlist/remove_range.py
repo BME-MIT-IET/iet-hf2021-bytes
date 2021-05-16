@@ -10,14 +10,12 @@ List becomes: [8, 13, 17, 23, 0, 92]
 legal range of the list (0 < start index < end index < size of list).
 """
 def remove_range(head, start, end):
-    assert start <= end
+    assert (start <= end)
     # Case: remove node at head
     if start == 0:
-        i = 0
-        while i < end+1:
+        for i in range (0, end+1):
             if head != None:
                 head = head.next
-            i = i -1
     else:
         current = head
         # Move pointer to start position
