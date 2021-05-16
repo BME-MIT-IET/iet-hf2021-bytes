@@ -41,7 +41,8 @@ from algorithms.strings import (
     atbash,
     longest_palindrome,
     knuth_morris_pratt,
-    panagram
+    panagram,
+    strip_url_params
 )
 
 import unittest
@@ -59,6 +60,17 @@ class TestAddBinary(unittest.TestCase):
         self.assertEqual("100", add_binary("11", "1"))
         self.assertEqual("101", add_binary("100", "1"))
         self.assertEqual("10", add_binary("1", "1"))
+
+class TestStripUrlParams(unittest.TestCase):
+    def test_strip_url_params1(self):
+        self.assertEqual(strip_url_params1("www.saadbenn.com?a=1&b=2&a=2"), "www.saadbenn.com?a=1&b=2")
+        self.assertEqual(strip_url_params1("www.saadbenn.com?a=1&b=2", ['b']), "www.saadbenn.com?a=1")
+    def test_strip_url_params2(self):
+        self.assertEqual(strip_url_params2("www.saadbenn.com?a=1&b=2&a=2"), "www.saadbenn.com?a=1&b=2")
+        self.assertEqual(strip_url_params2("www.saadbenn.com?a=1&b=2", ['b']), "www.saadbenn.com?a=1")
+    def test_strip_url_params3(self):
+        self.assertEqual(strip_url_params3("www.saadbenn.com?a=1&b=2&a=2"), "www.saadbenn.com?a=1&b=2")
+        self.assertEqual(strip_url_params3("www.saadbenn.com?a=1&b=2", ['b']), "www.saadbenn.com?a=1")
 
 
 class TestBreakingBad(unittest.TestCase):
@@ -377,26 +389,6 @@ class TestRomanToInt(unittest.TestCase):
         self.assertEqual(621, roman_to_int("DCXXI"))
         self.assertEqual(1, roman_to_int("I"))
         self.assertEqual(3999, roman_to_int("MMMCMXCIX"))
-
-
-# class TestStripUrlParams(unittest.TestCase):
-#     """[summary]
-#     Test for the file strip_urls_params.py
-
-#     Arguments:
-#         unittest {[type]} -- [description]
-#     """
-
-#     def test_strip_url_params1(self):
-#         self.assertEqual(strip_url_params1("www.saadbenn.com?a=1&b=2&a=2"), "www.saadbenn.com?a=1&b=2")
-#         self.assertEqual(strip_url_params1("www.saadbenn.com?a=1&b=2", ['b']), "www.saadbenn.com?a=1")
-#     def test_strip_url_params2(self):
-#         self.assertEqual(strip_url_params2("www.saadbenn.com?a=1&b=2&a=2"), "www.saadbenn.com?a=1&b=2")
-#         self.assertEqual(strip_url_params2("www.saadbenn.com?a=1&b=2", ['b']), "www.saadbenn.com?a=1")
-#     def test_strip_url_params3(self):
-#         self.assertEqual(strip_url_params3("www.saadbenn.com?a=1&b=2&a=2"), "www.saadbenn.com?a=1&b=2")
-#         self.assertEqual(strip_url_params3("www.saadbenn.com?a=1&b=2", ['b']), "www.saadbenn.com?a=1")
-
 
 class TestValidateCoordinates(unittest.TestCase):
     """[summary]

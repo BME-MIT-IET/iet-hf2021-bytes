@@ -14,7 +14,8 @@ from algorithms.dp import (
     longest_increasing_subsequence_optimized,
     longest_increasing_subsequence_optimized2,
     int_divide,find_k_factor,
-    planting_trees
+    planting_trees,
+    num_decodings
 )
 
 
@@ -207,6 +208,11 @@ class TestPlantingTrees(unittest.TestCase):
 
         # assert
         self.assertEqual(res, 9.28538328578604)
+
+class TestNumDecoding(unittest.TestCase):
+    def test_num_decoding(self):
+        self.assertEqual(2, num_decodings("12"))
+        self.assertEqual(0, num_decodings("0"))
 
 if __name__ == '__main__':
     unittest.main()
