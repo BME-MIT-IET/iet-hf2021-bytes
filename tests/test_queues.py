@@ -111,6 +111,20 @@ class TestPriorityQueue(unittest.TestCase):
         self.assertEqual(4, queue.size())
         self.assertEqual(2, queue.pop())
 
+class Testzigzagiterator(unittest.TestCase):
+    """Test Suite for the zigzagiterator
+    """
+
+    def test_zigzagiterator(self):
+        list1 = [1, 3, 5]
+        list2 = [2, 4, 6]
+        result = []
+        iterator = zigzagiterator.ZigZagIterator(list1, list2)
+        while iterator.has_next():
+            result.append(iterator.next())
+        self.assertEqual(result, [1, 2, 3, 4, 5, 6])
+
+
 
 if __name__ == "__main__":
     unittest.main()
